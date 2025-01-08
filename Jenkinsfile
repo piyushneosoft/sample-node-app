@@ -12,12 +12,12 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'docker build -t node-app .' 
+                sh 'sudo docker build -t node-app .' 
             }
         }
         stage('Deploy') {
             steps {
-                sh "docker run -d -p ${params.PORT}:3000 sample-node-app"
+                sh "sudo docker run -d -p ${params.PORT}:3000 sample-node-app"
             }
         }
     }
