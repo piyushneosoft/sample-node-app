@@ -17,7 +17,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh "sudo docker run -d -p ${params.PORT}:3000 sample-node-app"
+                sh "sudo docker run -d -p ${params.PORT}:3000 node-app"
             }
         }
     }
