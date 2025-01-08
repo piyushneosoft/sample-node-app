@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: params.BRANCH, url: 'https://github.com/your-repo/node-app.git'
+                git branch: params.BRANCH, url: 'https://github.com/piyushneosoft/sample-node-app.git'
             }
         }
         stage('Build') {
@@ -17,7 +17,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh "docker run -d -p ${params.PORT}:3000 node-app"
+                sh "docker run -d -p ${params.PORT}:3000 sample-node-app"
             }
         }
     }
